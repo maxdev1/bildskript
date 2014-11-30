@@ -1,0 +1,8 @@
+org.bildskript.interpretation.parts.components.LogAnd
+.   .   .   .   .   .   .
+.   x   x   x   x   x   .
+.   x   .   x   .   x   .
+i0  x   .   .   .   x   i1
+.   x   x   x   x   x   .
+.   x   x   x   x   x   .
+.   .   .   o0  .   .   .

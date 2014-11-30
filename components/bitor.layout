@@ -1,0 +1,8 @@
+org.bildskript.interpretation.parts.components.BitOr
+.   .   i0  .   i1  .   .
+.   x   x   x   x   x   .
+.   x   x   .   x   x   .
+.   x   x   .   x   x   .
+.   x   x   .   x   x   .
+.   x   x   x   x   x   .
+.   .   .   o0  .   .   .

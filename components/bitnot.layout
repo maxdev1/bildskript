@@ -1,0 +1,7 @@
+org.bildskript.interpretation.parts.components.BitNot
+.   .   .   .   i0  .   .   .   .
+.   x   x   x   x   x   x   x   .
+.   x   x   .   .   x   .   x   .
+.   x   .   x   .   .   x   x   .
+.   x   x   x   x   x   x   x   .
+.   .   .   .   o0  .   .   .   .

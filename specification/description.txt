@@ -1,0 +1,37 @@
+
+Basic structures:
+
+	freq signal				takes frequency divider at #0, writes 1 to #1 on each tick
+	
+	init signal				writes 1 to #1 when
+								a) set global, and program starts
+								b) set in function, and function starts
+						
+	comms					are ignored
+	
+	var						stores a value. when true is written to #1, the stored value
+							is written to #2. when a value is written to #0, the stored
+							value is changed to that value
+					
+	if						if true is written to #0, writes 1 to #1, else writes 1 to #2
+	
+	tapswitch				outputs 1 to #0 when clicked
+	
+	decider					if true is written to #2, the value written to #1 is written to #0
+					
+	bitwise/math			applies the operand to the input values (two-pinned side)
+							and writes the result to the output (one-pinned side)
+	
+	logical					applies the operand to the input values (opposite-sided pins)
+							and writes the result to the output (remaining side)
+							
+	inc/dec					increments/decrements the incoming value and writes it to the output
+
+
+Chips (functions):
+
+	identified chip			groups the layout of a chip. pixels in the top left box are used to
+							identify the function when including it
+	
+	func calls				calls the function matching the pixel layout once a value is written to start
+
