@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,9 +19,9 @@ import org.bildskript.parser.syntax.SyntaxList;
 public class LayoutFileLoader {
 
 	/**
-	 * @param f
+	 * @param in
 	 */
-	public static void loadSyntax(File f) {
+	public static void loadSyntax(String name, InputStream in) {
 
 		String line = null;
 		BufferedReader reader = null;
@@ -28,7 +29,7 @@ public class LayoutFileLoader {
 		try {
 
 			// Open layout file
-			reader = new BufferedReader(new InputStreamReader(new FileInputStream(f)));
+			reader = new BufferedReader(new InputStreamReader(in));
 
 			Class<?> componentClass = null;
 			List<SyntaxItem[]> lines = new ArrayList<>();
@@ -93,7 +94,7 @@ public class LayoutFileLoader {
 
 			// Check
 			if (lines.size() == 0) {
-				System.err.println("layout file '" + f.getName()
+				System.err.println("layout file '" + name
 						+ "' does not specify layout lines");
 				return;
 			}
@@ -109,18 +110,18 @@ public class LayoutFileLoader {
 				SyntaxList.addSyntax((Class<? extends Component>) componentClass, syntaxResult);
 			} else {
 				System.err.println("class '" + componentClass + "' defined for component layout '"
-						+ f.getName() + "' is not a subtype of Component");
+						+ name + "' is not a subtype of Component");
 			}
 
 		} catch (NumberFormatException e) {
-			System.err.println("error in component layout '" + f.getName() + "'");
+			System.err.println("error in component layout '" + name + "'");
 
 		} catch (IOException e) {
-			System.err.println("could not read component layout '" + f.getName() + "'");
+			System.err.println("could not read component layout '" + name + "'");
 
 		} catch (ClassNotFoundException e) {
 			System.err.println("could not find class '" + line + "' defined for component layout '"
-					+ f.getName() + "'");
+					+ name + "'");
 		} finally {
 			if (reader != null) {
 				try {

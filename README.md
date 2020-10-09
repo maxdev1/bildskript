@@ -1,9 +1,10 @@
-# bildskript 0.1
+# bildskript
+Version 0.0.1
 
 This is a simple visual program interpreter. The "specification/bildskript.png"
 contains how to draw the components, functions (chips) are not implemented yet.
 
-![Specification](https://github.com/maxdev1/bildskript/raw/master/specification/bildskript.png)
+![Specification](specification/bildskript.png)
 
 Editor keys:
 	1		Draw component parts (red)
@@ -16,3 +17,5 @@ Editor keys:
 	v		Paste
 
 Have fun!
+
+![Demo](specification/demo.png)
